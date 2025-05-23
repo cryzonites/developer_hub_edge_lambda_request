@@ -45,14 +45,14 @@ function rewriteCookie(request, token) {
             ...request.headers,
             'set-cookie': [{
                 key: 'Set-Cookie',
-                value: `CognitoAuthToken=${token}; Path=/; Domain=developer-hub.com; HttpOnly; Secure`
+                value: `CognitoAuthToken=${token}; Path=/; Domain=developer-hub.cryzon.com; HttpOnly; Secure`
             }]
         }
     };
 }
 
 function redirectToCognitoLogin() {
-    const cognitoLoginUrl = 'https://auth.developer-hub.com/login?client_id=ier4f9o180rrcujdu110ui9k3&response_type=token&redirect_uri=https://developer-hub.com';
+    const cognitoLoginUrl = 'https://auth.developer-hub.cryzon.com/login?client_id=ier4f9o180rrcujdu110ui9k3&response_type=token&redirect_uri=https://developer-hub.cryzon.com';
     return {
         status: '302',
         statusDescription: 'Found',
